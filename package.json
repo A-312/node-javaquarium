@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha --reporter spec --bail --check-leaks test/*-tests.js",
+    "test": "mocha --reporter landing --bail --check-leaks test/*-tests.js",
     "bootstrap:ci": "npm ci && npm ci packages/*",
     "test:ci": "mocha --reporter spec --check-leaks test/*-tests.js",
     "report-coverage:ci": "nyc mocha --reporter spec && nyc report --reporter=text-lcov | coveralls"
