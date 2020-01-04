@@ -1,0 +1,27 @@
+os:
+  - linux
+
+language: node_js
+
+node_js:
+  - "8.15"
+  - "10.16"
+  - lts/*
+  - stable
+
+jobs:
+  fast_finish: true
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm run bootstrap:ci
+
+script:
+  - npm run test:ci
+  - npm run lint
+
+after_script:
+  - npm run report-coverage:ci
